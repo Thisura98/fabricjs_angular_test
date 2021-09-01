@@ -31,6 +31,8 @@ export class TestComponent implements OnInit {
   }
 
   private setup(){
+
+    // Create and add Green Rectangle
     const rect = new fabric.Rect({ 
       width: 100, 
       height: 50, 
@@ -40,6 +42,9 @@ export class TestComponent implements OnInit {
       borderDashArray: [1,2,0],
       borderScaleFactor: 2
     });
+    this.canvas?.add(rect);
+
+
     this.canvas!.on('selection:created', (e) => {
       this.events.push(`Selected ${e.target!.type!}`);
     });
@@ -49,14 +54,11 @@ export class TestComponent implements OnInit {
     this.canvas!.on('selection:cleared', (e) => {
       this.events.push('Selection cleared');
     });
-    // rect.on('selection:cleared', () => {
-    //   this.events.push('Selected Rect');
-    // });
 
-    this.canvas?.add(rect);
 
+    // Create and add 
     const img = fabric.Image.fromURL(
-      'http://localhost/fs/res_upload/image/1630448440504.png', 
+      'https://www.pngitem.com/pimgs/b/147-1478483_8-bit-mario-png.png', 
       (fabricImage) => {
         fabricImage.scaleToWidth(100);
         this.canvas?.add(fabricImage);

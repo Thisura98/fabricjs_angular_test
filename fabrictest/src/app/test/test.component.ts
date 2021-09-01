@@ -60,7 +60,7 @@ export class TestComponent implements OnInit {
     const img = fabric.Image.fromURL(
       'https://www.pngitem.com/pimgs/b/147-1478483_8-bit-mario-png.png', 
       (fabricImage) => {
-        fabricImage.scaleToWidth(100);
+        fabricImage.scaleToWidth(30);
         this.canvas?.add(fabricImage);
 
         fabricImage.on('selection:created', () => {

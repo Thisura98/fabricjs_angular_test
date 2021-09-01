@@ -1,1 +1,12 @@
-<p>test works!</p>
+<div class="container">
+    <canvas width="600" height="600" 
+        style="border: 1px solid #cccccc;" id="fabricSurface">
+    </canvas>
+    <div class="events">
+        <p *ngFor="let event of events">{{event}}</p>
+    </div>
+</div>
+
+<div class="" (click)="testNavClicked()">
+    Test Navigation while Canvas is Running
+</div>
